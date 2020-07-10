@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.ltts.wellspoc.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.ltts.wellspoc.Perspective"
+            name="RCP Perspective"
+            id="com.ltts.wellspoc.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.ltts.wellspoc.ui.view.WellsInformationView"
+            icon="icons/eclipse16.png"
+            id="com.ltts.wellspoc.wellinformationview"
+            inject="true"
+            name="Well Details"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="com.ltts.wellspoc.wellinformationview"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="Wells Information Application"
+            application="com.ltts.wellspoc.application">
+         <property
+               name="windowImages"
+               value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png, icons/eclipse128.png,icons/eclipse256.png,icons/eclipse512.png">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            icon="icons/eclipse16.png"
+            id="com.ltts.wellspoc">
+      </intro>
+      <introProductBinding
+            introId="com.ltts.wellspoc"
+            productId="com.ltts.wellspoc.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="introContent.xml"
+            id="com.ltts.wellspoc.config"
+            introId="com.ltts.wellspoc">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.ltts.wellspoc.wellsinformationwizardcommand"
+            name="Well Selection Wizard">
+      </command>
+      <command
+            id="com.ltts.wellspoc.wellsinformationviewcommand"
+            name="Show Well Detail">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:file?before=quit">
+         <command
+               commandId="com.ltts.wellspoc.wellsinformationwizardcommand"
+               label="Well Selection Wizard"
+               style="push">
+         </command>
+         <command
+               commandId="com.ltts.wellspoc.wellsinformationviewcommand"
+               label="Show Well Detail"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.ltts.wellspoc.ui.handler.WellSelectionWizardHandler"
+            commandId="com.ltts.wellspoc.wellsinformationwizardcommand">
+      </handler>
+      <handler
+            class="com.ltts.wellspoc.ui.handler.WellInformationViewHandler"
+            commandId="com.ltts.wellspoc.wellsinformationviewcommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.ltts.wellspoc.wellsinformationwizardcommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+Insert">
+      </key>
+      <key
+            commandId="com.ltts.wellspoc.wellsinformationviewcommand"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M2+V">
+      </key>
+   </extension>
+
+</plugin>
