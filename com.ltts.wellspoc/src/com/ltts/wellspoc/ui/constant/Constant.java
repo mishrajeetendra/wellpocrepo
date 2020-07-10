@@ -1,4 +1,4 @@
-package com.ltts.wellspoc.ui.Constant;
+package com.ltts.wellspoc.ui.constant;
 
 public abstract class Constant {
 

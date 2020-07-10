@@ -8,7 +8,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
 
-import com.ltts.wellspoc.ui.Constant.Constant;
+import com.ltts.wellspoc.ui.constant.Constant;
 import com.ltts.wellspoc.ui.model.WellInformation;
 import com.ltts.wellspoc.ui.view.WellsInformationView;
 
