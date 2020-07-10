@@ -22,7 +22,7 @@ public class WellSelection extends WizardPage {
 
 	public WellSelection() {
 		// TODO Auto-generated constructor stub
-		super("Well Sellection Page");
+		super("Well Selection Page");
 		setTitle("Wells Selection");
 		setDescription("Select wells name");
 		setControl(table);
