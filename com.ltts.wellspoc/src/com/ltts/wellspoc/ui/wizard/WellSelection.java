@@ -2,6 +2,7 @@ package com.ltts.wellspoc.ui.wizard;
 
 import java.util.List;
 
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
@@ -88,6 +89,12 @@ public class WellSelection extends WizardPage {
 		setControl(composite);
 		setPageComplete(false);
 
+	}
+
+	@Override
+	public IWizardPage getPreviousPage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -107,6 +107,27 @@
                style="push">
          </command>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="com.ltts.wellspoc.wellsinformationwizardtoolbar"
+               label="Well Information">
+            <command
+                  commandId="com.ltts.wellspoc.wellsinformationwizardcommand"
+                  icon="icons/eclipse16.png"
+                  label="Well Selection Wizard"
+                  style="push"
+                  tooltip="Well Selection Wizard">
+            </command>
+            <command
+                  commandId="com.ltts.wellspoc.wellsinformationviewcommand"
+                  icon="icons/add_correction.png"
+                  label="Show Well Detail"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
