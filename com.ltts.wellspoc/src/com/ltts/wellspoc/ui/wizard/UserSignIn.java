@@ -16,8 +16,8 @@ public class UserSignIn extends WizardPage {
 	private static Text password;
 	private Composite composite;
 
-	public UserSignIn() {
-		// TODO Auto-generated constructor stub
+	public UserSignIn()
+	{
 		super("User Page");
 		setTitle("User");
 		setDescription("User authentication");
@@ -32,8 +32,8 @@ public class UserSignIn extends WizardPage {
 	}
 
 	@Override
-	public void createControl(Composite parent) {
-		// TODO Auto-generated method stub
+	public void createControl(Composite parent) 
+	{
 
 		composite = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();

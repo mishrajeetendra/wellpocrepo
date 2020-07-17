@@ -8,8 +8,8 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
 
-import com.ltts.wellspoc.ui.constant.Constant;
 import com.ltts.wellspoc.ui.model.WellInformation;
+import com.ltts.wellspoc.ui.util.LoadProperties;
 import com.ltts.wellspoc.ui.view.WellsInformationView;
 
 public class WellSelectionWizard extends Wizard {
@@ -75,28 +75,29 @@ public class WellSelectionWizard extends Wizard {
 	public IWizardPage getNextPage(IWizardPage page) {
 		// TODO Auto-generated method stub
 
+		LoadProperties prop = LoadProperties.getInstance();
 		String userName = userSignIn.getUserName();
 		String password = userSignIn.getPassword();
 
-		if (userName.equals(Constant.USER_NAME) && password.equals(Constant.PASSWORD)) {
+		if (userName.equals(prop.getProperty("USERNAME")) && password.equals(prop.getProperty("PASSWORD"))) {
 
 			return wellSelection;
 
-		} else if (!userName.equals(Constant.USER_NAME) && !password.equals(Constant.PASSWORD)) {
+		} else if (!userName.equals(prop.getProperty("USERNAME")) && !password.equals(prop.getProperty("PASSWORD"))) {
 
 			MessageBox box = new MessageBox(getShell(), SWT.ICON_ERROR);
 			box.setText("Error");
 			box.setMessage("Please enter a valid username & password.");
 			box.open();
 
-		} else if (!userName.equals(Constant.USER_NAME)) {
+		} else if (!userName.equals(prop.getProperty("USERNAME"))) {
 
 			MessageBox box = new MessageBox(getShell(), SWT.ICON_ERROR);
 			box.setText("Error");
 			box.setMessage("Please enter a valid username.");
 			box.open();
 
-		} else if (!password.equals(Constant.PASSWORD)) {
+		} else if (!password.equals(prop.getProperty("PASSWORD"))) {
 
 			MessageBox box = new MessageBox(getShell(), SWT.ICON_ERROR);
 			box.setText("Error");

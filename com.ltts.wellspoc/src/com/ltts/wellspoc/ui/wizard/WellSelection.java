@@ -65,18 +65,20 @@ public class WellSelection extends WizardPage {
 
 			@Override
 			public void handleEvent(Event e) {
-				// TODO Auto-generated method stub
-
 				if (e.detail == SWT.CHECK) {
 
 					TableItem item = (TableItem) e.item;
 
 					for (int i = 0; i < listOfWells.size(); i++) {
 
-						if (listOfWells.get(i).getWellName().equals(item.getText(1))) {
-							if (listOfWells.get(i).isSelected()) {
+						if (listOfWells.get(i).getWellName().equals(item.getText(1))) 
+						{
+							if (listOfWells.get(i).isSelected()) 
+							{
 								listOfWells.get(i).setSelected(false);
-							} else {
+							} 
+							else 
+							{
 								listOfWells.get(i).setSelected(true);
 							}
 						}

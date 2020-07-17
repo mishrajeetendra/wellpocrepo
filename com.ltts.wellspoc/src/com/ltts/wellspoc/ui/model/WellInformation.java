@@ -16,7 +16,8 @@ public class WellInformation {
 
 	public static List<WellInformation> listOfWells = new ArrayList<WellInformation>();
 
-	public WellInformation() {
+	public WellInformation() 
+	{
 		super();
 	}
 
